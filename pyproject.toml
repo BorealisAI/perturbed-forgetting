@@ -1,0 +1,18 @@
+[tool.isort]
+line_length = 120
+indent = "    "
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+
+[tool.black]
+line-length = 120
+target-version = ["py38", "py39", "py310", "py311"]
+
+[tool.ruff]
+target-version = "py38"
+line-length = 120
+lint.select = ["ALL"]
+lint.fixable = ["ALL"]
+lint.ignore = ["ANN", "C", "D", "DTZ005", "EM", "ERA001", "FA100", "FBT", "G004", "N", "NPY002", "PLR", "PLW", "PTH", "RET504", "S", "SLF001", "T201", "TID252", "TRY"]
