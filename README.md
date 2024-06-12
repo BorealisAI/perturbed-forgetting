@@ -1,7 +1,7 @@
 <h1 align="center">Forget Sharpness: Perturbed Forgetting of Model Biases Within SAM Dynamics</h1>
 <h3 align="center">Ankit Vani, Frederick Tung, Gabriel L. Oliveira, Hossein Sharifi-Noghabi</h3>
 
-### [[Paper]](https://openreview.net/pdf?id=cU20finY8V)
+### Paper: [[arXiv]](https://arxiv.org/abs/2406.06700) [[OpenReview]](https://openreview.net/forum?id=cU20finY8V)
 
 **Abstract**: Despite attaining high empirical generalization, the sharpness of models trained with sharpness-aware minimization (SAM) do not always correlate with generalization error. Instead of viewing SAM as minimizing sharpness to improve generalization, our paper considers a new perspective based on SAM's training dynamics. We propose that perturbations in SAM perform *perturbed forgetting*, where they discard undesirable model biases to exhibit learning signals that generalize better. We relate our notion of forgetting to the information bottleneck principle, use it to explain observations like the better generalization of smaller perturbation batches, and show that perturbed forgetting can exhibit a stronger correlation with generalization than flatness. While standard SAM targets model biases exposed by the steepest ascent directions, we propose a new perturbation that targets biases exposed through the model's outputs. Our output bias forgetting perturbations outperform standard SAM, GSAM, and ASAM on ImageNet, robustness benchmarks, and transfer to CIFAR-{10,100}, while sometimes converging to sharper regions. Our results suggest that the benefits of SAM can be explained by alternative mechanistic principles that do not require flatness of the loss surface.
 
@@ -15,8 +15,10 @@ An implementation of [Sharpness-Aware Minimization (SAM)](https://arxiv.org/abs/
 
 The output-bias forgetting (OBF) perturbation function is provided in `perturbed_forgetting/loss/output_bias_forget.py`.
 
-**Other tips:**
+**Coming soon:**
+- Code to estimate the correlation between accuracy and forgetting.
 
+**Tips:**
 - To avoid a memory leak with [TensorFlow Datasets (TFDS)](https://www.tensorflow.org/datasets/overview), you may need [`gperftools`](https://github.com/gperftools/gperftools), which provides `libtcmalloc.so.4`. Replace the path to this file in the placeholders in the included scripts, otherise remove the `LD_PRELOAD=...` line.
 - To log metrics using [Weights and Biases (wandb)](https://docs.wandb.ai/), pass `--log-wandb` to `train.py`.
 
